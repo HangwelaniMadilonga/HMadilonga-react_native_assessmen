@@ -1,0 +1,1 @@
+// This is a text file that goes into depth about the UI structure,todos,alternative implementations on the kanban-ui app.
