@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text,TouchableOpacity, StyleSheet, Pressable, View } from 'react-native';
 
-PriorityButton = (props) => {
+PriorityButtons = (props) => {
   
   return (
     <View style={styles.mainContainer}>
@@ -58,4 +58,4 @@ const styles = StyleSheet.create({
 
 });
 
-  export default PriorityButton;
+  export default PriorityButtons;

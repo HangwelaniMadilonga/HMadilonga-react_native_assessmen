@@ -1,1 +1,4 @@
 // This is a text file that goes into depth about the UI structure,todos,alternative implementations on the kanban-ui app.
+
+The kanban board will  have a feature that can have the user shoow which tasks they want to see based on the priority status of the task.
+

@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import PriorityButton from '../components/PriorityButton';
+import PriorityButtons from '../components/PriorityButtons';
 const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
     return (
       <View >
