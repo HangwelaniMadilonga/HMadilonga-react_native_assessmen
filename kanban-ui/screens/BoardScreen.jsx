@@ -1,9 +1,10 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-
+import PriorityButton from '../components/PriorityButton';
 const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
     return (
       <View >
       <Text style = {styles.mainTitle}> Kanban Board</Text>
+      <PriorityButton/>
       </View>
   
       
