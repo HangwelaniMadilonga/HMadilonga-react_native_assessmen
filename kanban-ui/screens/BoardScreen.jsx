@@ -7,7 +7,11 @@ const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
       <View style = {styles.screenContainer}>
       <Text style = {styles.mainTitle}> Kanban Board</Text>
       <ButtonStack/>
-      <KanbanColums/>
+      <View style= {styles.columnContainer}>
+      <KanbanColums title = "ToDo"/>
+      <KanbanColums title = "In Progress"/>
+      <KanbanColums title = "Done"/>
+      </View>
       </View>
   
       
@@ -26,7 +30,12 @@ const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
    screenContainer: {
     marginLeft: 4,
     
- }
+ },
+    columnContainer: {
+        
+        flexDirection: 'row',
+
+    }
 });
 
   export default BoardScreen;

@@ -1,14 +1,17 @@
 import {View, Text, TextInput, StyleSheet} from 'react-native';
 import TaskCard from './TaskCard';
 
-const KanbanColums = () => {
+const KanbanColums = (props) => {
     return (
       <View style={styles.mainContainer}>
         <View style={styles.columnHeader}>
-            <Text style={styles.normalText}>ToDo</Text>
+            <Text style={styles.normalText}>{props.title}</Text>
         </View>
         <View style= {styles.columnBody}>
             <TaskCard/>
+            <TaskCard/>
+            <TaskCard/>
+            
             
         </View>
         
@@ -22,6 +25,7 @@ const KanbanColums = () => {
     
     flexDirection: 'column',
     gap: 0,
+    marginRight: 16,
   },
   normalText: {
     fontSize: 14,
