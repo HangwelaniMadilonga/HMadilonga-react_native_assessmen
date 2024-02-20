@@ -16,7 +16,7 @@ const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
       fontSize: 40,
       fontFamily: 'Roboto',
       fontWeight: 'bold',
-      color: 'rgba(34, 78, 128, 1)'
+      color: '#3b82f6'
    }});
 
   export default BoardScreen;
