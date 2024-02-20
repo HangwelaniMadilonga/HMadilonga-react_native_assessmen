@@ -9,7 +9,8 @@ const KanbanColums = () => {
         </View>
         <View style= {styles.cardBody}>
             <View style={styles.cardInfo}>
-
+            </View>
+            <View style={styles.cardInfo}>
             </View>
         </View>
       </View>
@@ -46,10 +47,7 @@ const KanbanColums = () => {
     backgroundColor: 'rgba(59,130,246,0.21)',
     width: 300,
     minHeight: 120,
-    flex: 1,
     
-    justifyContent: 'center',
-    alignItems: 'center',
 
   },
   cardInfo: {
@@ -60,6 +58,9 @@ const KanbanColums = () => {
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 4,
+    marginTop: 12,
+    marginLeft: 12,
+    marginBottom: 12,
     
 
   },

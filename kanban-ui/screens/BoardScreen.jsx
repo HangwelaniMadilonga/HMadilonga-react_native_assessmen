@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import PriorityButtons from '../components/PriorityButtons';
 import KanbanColums from '../components/KanbanColumn';
+
 const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
     return (
       <View style = {styles.screenContainer}>
@@ -24,6 +25,7 @@ const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
    },
    screenContainer: {
     marginLeft: 4,
+    
  }
 });
 
