@@ -1,12 +1,12 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import PriorityButtons from '../components/PriorityButtons';
+import ButtonStack from '../components/ButtonStack';
 import KanbanColums from '../components/KanbanColumn';
 
 const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
     return (
       <View style = {styles.screenContainer}>
       <Text style = {styles.mainTitle}> Kanban Board</Text>
-      <PriorityButtons/>
+      <ButtonStack/>
       <KanbanColums/>
       </View>
   

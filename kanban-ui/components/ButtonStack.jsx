@@ -1,7 +1,10 @@
 import React from 'react';
 import { Text,TouchableOpacity, StyleSheet, Pressable, View } from 'react-native';
+import PriorityButton from './PriorityButton';
 
-PriorityButtons = (props) => {
+
+
+ButtonStack = () => {
   
   return (
     <View style={styles.mainContainer}>
@@ -9,15 +12,9 @@ PriorityButtons = (props) => {
             Show Prioirity:
         </Text>
     <View style={styles.buttonContainer}>
-    <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Low</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-      <Text style={styles.buttonText}>Medium</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.button}>
-      <Text style={styles.buttonText}>High</Text>
-      </TouchableOpacity>
+    <PriorityButton title = "Low"/>
+    <PriorityButton title = "Medium"/>
+    <PriorityButton title = "High"/>
     </View>
     </View>
   );
@@ -59,4 +56,4 @@ const styles = StyleSheet.create({
 
 });
 
-  export default PriorityButtons;
+  export default ButtonStack;
