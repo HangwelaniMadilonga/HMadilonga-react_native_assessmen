@@ -34,7 +34,7 @@ const KanbanColums = () => {
     marginTop: 80,
     
     backgroundColor: '#3b82f6',
-    width: 300,
+    width: 310,
     minHeight: 20,
     justifyContent: 'center',
     alignItems: 'center',
@@ -45,7 +45,7 @@ const KanbanColums = () => {
   cardBody: {
 
     backgroundColor: 'rgba(59,130,246,0.21)',
-    width: 300,
+    width: 310,
     minHeight: 120,
     
 
