@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import ButtonStack from '../components/ButtonStack';
 import KanbanColums from '../components/KanbanColumn';
 
@@ -8,9 +8,12 @@ const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
       <Text style = {styles.mainTitle}> Kanban Board</Text>
       <ButtonStack/>
       <View style= {styles.columnContainer}>
+      <ScrollView horizontal={true}>
       <KanbanColums title = "ToDo"/>
       <KanbanColums title = "In Progress"/>
       <KanbanColums title = "Done"/>
+      </ScrollView>
+      
       </View>
       </View>
   

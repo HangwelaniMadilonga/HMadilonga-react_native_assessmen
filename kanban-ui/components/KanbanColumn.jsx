@@ -26,6 +26,7 @@ const KanbanColums = (props) => {
     flexDirection: 'column',
     gap: 0,
     marginRight: 16,
+    marginBottom: 12,
   },
   normalText: {
     fontSize: 14,
