@@ -10,6 +10,8 @@ const KanbanColums = (props) => {
         <View style= {styles.columnBody}>
             <TaskCard/>
             <TaskCard/>
+            
+            
                  
         </View>
         

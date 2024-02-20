@@ -12,12 +12,13 @@ const AddButton = () => {
    
         addButton: {
             backgroundColor: '#3434C1',
-            alignSelf: 'flex-end',            
+                        
             alignItems: 'center',
-            marginRight: 30,
-            marginTop: 200,
+            marginLeft: 300,
+            marginTop: 730,
             height: 32,
-            
+            zIndex: 1,
+            position: 'absolute',
            
             minWidth: 80,
             minHeight: 40,
