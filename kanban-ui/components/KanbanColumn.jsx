@@ -5,11 +5,11 @@ const KanbanColums = () => {
     return (
       <View style={styles.mainContainer}>
         <View style={styles.cardHeader}>
+            <Text style={styles.normalText}>ToDo</Text>
+        </View>
+        <View>
 
         </View>
-        {/* <View>
-
-        </View> */}
       </View>
     );
   };
@@ -17,23 +17,32 @@ const KanbanColums = () => {
   const styles = StyleSheet.create({
    
   mainContainer: {
-    flex: 1,
-    flexDirection: 'row',
+    
+    flexDirection: 'column',
     gap: 0,
+    margin: '10',
+    
+    
+    
     
   },
-  nomarlText: {
+  normalText: {
     fontSize: 14,
-    marginTop: 10,
-    marginLeft: 0,
+    padding:6,
     fontWeight: 'bold',
+    color: 'white',
   },
   cardHeader: {
-    marginTop: 0,
+    marginTop: 80,
+    
     backgroundColor: '#3b82f6',
-    minWidth: 22,
-    borderRadius: 4,
-    maxHeight: 50
+    width: 180,
+    minHeight: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginLeft: '20',
+    
+
   },
 
 });

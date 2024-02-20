@@ -38,21 +38,22 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     letterSpacing: 0.25,
     color: 'white',
+    
   },
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',
-    marginLeft: 22,
+    marginLeft: 20,
   },
   mainContainer: {
-    flex: 1,
+    
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    // justifyContent: 'space-between',
   },
   nomarlText: {
     fontSize: 14,
     marginTop: 10,
-    marginLeft: 0,
+    marginLeft: 7,
     fontWeight: 'bold',
   },
 
