@@ -21,22 +21,7 @@ ButtonStack = () => {
 }
 
 const styles = StyleSheet.create({
-    button: {
-        alignItems: 'center',
-        
-        padding: 10,
-        width: 85,
-        height: 40,
-        backgroundColor: '#3b82f6',
-      },
-  buttonText: {
-    fontSize: 16,
-    lineHeight: 21,
-    fontWeight: 'bold',
-    letterSpacing: 0.25,
-    color: 'white',
     
-  },
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',

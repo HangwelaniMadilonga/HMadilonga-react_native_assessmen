@@ -1,5 +1,5 @@
-import { Container } from 'postcss';
 import {View, Text, TextInput, StyleSheet} from 'react-native';
+import TaskCard from './TaskCard';
 
 const KanbanColums = () => {
     return (
@@ -7,12 +7,11 @@ const KanbanColums = () => {
         <View style={styles.columnHeader}>
             <Text style={styles.normalText}>ToDo</Text>
         </View>
-        <View style= {styles.cardBody}>
-            <View style={styles.cardInfo}>
-            </View>
-            <View style={styles.cardInfo}>
-            </View>
+        <View style= {styles.columnBody}>
+            <TaskCard/>
+            
         </View>
+        
       </View>
     );
   };
@@ -42,7 +41,7 @@ const KanbanColums = () => {
     
 
   },
-  cardBody: {
+  columnBody: {
 
     backgroundColor: 'rgba(59,130,246,0.21)',
     width: 310,
