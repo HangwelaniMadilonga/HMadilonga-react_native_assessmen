@@ -11,8 +11,7 @@ const KanbanColums = (props) => {
             <TaskCard/>
             <TaskCard/>
             <TaskCard/>
-            
-            
+            <TaskCard/>       
         </View>
         
       </View>
@@ -51,6 +50,7 @@ const KanbanColums = (props) => {
     backgroundColor: 'rgba(59,130,246,0.21)',
     width: 310,
     minHeight: 120,
+    
     
 
   },

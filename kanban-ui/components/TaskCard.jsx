@@ -1,10 +1,12 @@
-import {View, Text, TextInput, StyleSheet} from 'react-native';
-
+import {View, Text, TextInput, StyleSheet,TouchableOpacity} from 'react-native';
+import DeleteButton from './DeleteButton';
 const TaskCard = () => {
     return(
     <View 
     style={styles.cardInfo}>
+        <DeleteButton/>
     </View>
+    
     )
 };
 
@@ -23,6 +25,21 @@ const styles = StyleSheet.create({
         marginBottom: 12,
         
     
-      }});
+      },
+      removeButton: {
+        backgroundColor: 'white',
+        borderRadius: 6000,
+        
+        alignSelf: 'flex-end',
+        marginRight: 7,
+        marginBottom: 70,
+        
+      },
+      buttonText: {
+        fontWeight: 'bold',
+        fontSize: 20,
+        padding: 2,
+      }
+    });
 
       export default TaskCard;
