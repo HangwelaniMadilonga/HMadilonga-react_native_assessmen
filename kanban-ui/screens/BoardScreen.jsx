@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import ButtonStack from '../components/ButtonStack';
 import KanbanColums from '../components/KanbanColumn';
+import AddButton from '../components/AddButton';
 
 const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
     return (
@@ -15,6 +16,7 @@ const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
       </ScrollView>
       
       </View>
+      <AddButton />
       </View>
   
       
