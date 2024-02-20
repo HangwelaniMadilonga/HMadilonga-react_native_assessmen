@@ -4,16 +4,19 @@ import { Text,TouchableOpacity, StyleSheet, Pressable, View } from 'react-native
 PriorityButton = (props) => {
   
   return (
-    <View>
+    <View style={styles.mainContainer}>
+        <Text style={styles.nomarlText}>
+            Show Prioirity:
+        </Text>
     <View style={styles.buttonContainer}>
     <TouchableOpacity style={styles.button}>
-        <Text style={styles.text}>Low</Text>
+        <Text style={styles.buttonText}>Low</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-      <Text style={styles.text}>Medium</Text>
+      <Text style={styles.buttonText}>Medium</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button}>
-      <Text style={styles.text}>High</Text>
+      <Text style={styles.buttonText}>High</Text>
       </TouchableOpacity>
     </View>
     </View>
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
         height: 40,
         backgroundColor: '#3b82f6',
       },
-  text: {
+  buttonText: {
     fontSize: 16,
     lineHeight: 21,
     fontWeight: 'bold',
@@ -39,7 +42,20 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flex: 1,
     flexDirection: 'row',
-  }
+    marginLeft: 22,
+  },
+  mainContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  nomarlText: {
+    fontSize: 14,
+    marginTop: 10,
+    marginLeft: 0,
+    fontWeight: 'bold',
+  },
+
 });
 
   export default PriorityButton;
