@@ -7,7 +7,7 @@ const KanbanColums = () => {
         <View style={styles.cardHeader}>
             <Text style={styles.normalText}>ToDo</Text>
         </View>
-        <View>
+        <View style= {styles.cardBody}>
 
         </View>
       </View>
@@ -20,11 +20,6 @@ const KanbanColums = () => {
     
     flexDirection: 'column',
     gap: 0,
-    margin: '10',
-    
-    
-    
-    
   },
   normalText: {
     fontSize: 14,
@@ -36,12 +31,22 @@ const KanbanColums = () => {
     marginTop: 80,
     
     backgroundColor: '#3b82f6',
-    width: 180,
+    width: 250,
     minHeight: 20,
     justifyContent: 'center',
     alignItems: 'center',
     marginLeft: '20',
     
+
+  },
+  cardBody: {
+    
+    
+    backgroundColor: 'rgba(59,130,246,0.21)',
+    width: 250,
+    minHeight: 90,
+    justifyContent: 'center',
+    alignItems: 'center',
 
   },
 
