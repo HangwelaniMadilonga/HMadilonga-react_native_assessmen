@@ -8,9 +8,9 @@ const KanbanColums = () => {
             <Text style={styles.normalText}>ToDo</Text>
         </View>
         <View style= {styles.cardBody}>
-            <TextInput style={styles.cardInfo}>
+            <View style={styles.cardInfo}>
 
-            </TextInput>
+            </View>
         </View>
       </View>
     );
@@ -59,6 +59,7 @@ const KanbanColums = () => {
     minHeight: 100,
     justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 4,
     
 
   },
