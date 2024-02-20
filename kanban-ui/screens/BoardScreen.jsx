@@ -4,7 +4,7 @@ const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
     return (
       <View >
       <Text style = {styles.mainTitle}> Kanban Board</Text>
-      <PriorityButton/>
+      <PriorityButtons/>
       </View>
   
       
