@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { SafeAreaView, View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 
 const TaskForm = ({modalVisible, setModalVisible}) => {
-    const [title, setTitle] = useState('');
-    const [description, setDescription] = useState('');
-    const [priority, setPriority] = useState(''); 
+    const [title, setTitle] = useState('New Task');
+    const [description, setDescription] = useState('This is a new Task');
+    const [priority, setPriority] = useState('ToDo'); 
     const [tasks, addTask] = useState([]); 
 
     // Function to handle the submission of a task
@@ -38,6 +38,7 @@ const TaskForm = ({modalVisible, setModalVisible}) => {
                     style={styles.input}
                     onChangeText={setDescription}
                     value={description}
+                    
                 />
             </View>
             <View>
@@ -95,6 +96,7 @@ const styles = StyleSheet.create({
         flex:1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: 'Grey',
     },
     formText: {
         fontSize: 30,
