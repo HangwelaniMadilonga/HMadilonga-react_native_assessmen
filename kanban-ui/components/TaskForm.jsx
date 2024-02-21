@@ -1,67 +1,75 @@
-import {SafeAreaView,View, Text, TextInput, StyleSheet,Pressable,TouchableOpacity} from 'react-native';
-import React, {useState} from 'react';
-import PriorityButton from './PriorityButton';
+import React, { useState } from 'react';
+import { SafeAreaView, View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+
 const TaskForm = () => {
-    const [title, setTitle] = React.useState('');
-    const [description, setDescription] = React.useState('');
-    
-    const [priority,setPriority] = React.useState('');
-    const [task,addTask] = React.useState([]);
-    const [backgroundColor, setBackgroundColor] = useState('#000080');
-    
-    const toggleBackgroundColor = () => {
-        setBackgroundColor(backgroundColor === '#000080' ? 'black' : '000080');
-      };
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [priority, setPriority] = useState(''); 
+    const [tasks, addTask] = useState([]); 
 
-      const saveDate = () => {
-        setDate(`${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`);
-      }
-
-    return(
-        <View style= {styles.formContainer}>
-       <View>
-        <Text style= {styles.formText}>Project title</Text>
-        <TextInput
+    // Function to handle the submission of a task
+    const handleSubmit = () => {
+        const newTask = { title, description, priority };
+        addTask([...tasks, newTask]);
         
-        style={styles.input}
-        onChangeText={setTitle}
-        value={title}
-        returnKeyType='done'
-      />
-       </View>
-       <View>
-       <Text style= {styles.formText}>Description</Text>
-       <TextInput
-        
-        
-        returnKeyType='done'
-        style={styles.input}
-        onChangeText={setDescription}
-        value={description}
-        
-      />
-       </View>
-       <View>
-       <Text style= {styles.formText}>Current priority status: {priority}</Text>
-       <View style= {styles.statusButtons}>
-       <PriorityButton title = "ToDo" 
-       />
-       <PriorityButton title = "Progress"/>
-       <PriorityButton title = "Done"/>
-       </View>
-       </View>
-       <View style= {styles.statusButtons}>
-       <TouchableOpacity style={[styles.button, {backgroundColor}]}
-        >
-        <Text style={styles.buttonText}>Cancel</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Submit</Text>
-        </TouchableOpacity>
-       </View>
        
-    
-       </View>
+        setTitle('');
+        setDescription('');
+        setPriority('');
+    };
+
+    return (
+        <View style={styles.formContainer}>
+            <View>
+                <Text style={styles.formText}>Project title</Text>
+                <TextInput
+                    style={styles.input}
+                    onChangeText={setTitle}
+                    value={title}
+                    returnKeyType='done'
+                />
+            </View>
+            <View>
+                <Text style={styles.formText}>Description</Text>
+                <TextInput
+                    returnKeyType='done'
+                    style={styles.input}
+                    onChangeText={setDescription}
+                    value={description}
+                />
+            </View>
+            <View>
+                <Text style={styles.formText}>Current priority status: </Text>
+                <View style={styles.statusButtons}>
+                    <TouchableOpacity
+                    //When priority is "ToDo" the button shall have a background of Black.
+                        style={[styles.interactiveButton, { backgroundColor: priority === 'ToDo' ? 'black' : '#3b82f6' }]}
+                        onPress={() => setPriority("ToDo")}
+                    >
+                        <Text style={styles.interactiveButtonText}>ToDo</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                    //When priority is "Progress" the button shall have a background of Black.
+                        style={[styles.interactiveButton, { backgroundColor: priority === 'Progress' ? 'black' : '#3b82f6' }]}
+                        onPress={() => setPriority("Progress")}
+                    >
+                        <Text style={styles.interactiveButtonText}>Progress</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                    //When priority is "Done" the button shall have a background of Black.
+                        style={[styles.interactiveButton, { backgroundColor: priority === 'Done' ? 'black' : '#3b82f6' }]}
+                        onPress={() => setPriority("Done")}
+                    >
+                        <Text style={styles.interactiveButtonText}>Done</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+            <View style={styles.statusButtons}>
+                <TouchableOpacity style={[styles.button]} onPress={handleSubmit}>
+                    <Text style={styles.buttonText}>Submit</Text>
+                </TouchableOpacity>
+            </View>
+        </View>
     );
 };
 
@@ -107,7 +115,22 @@ const styles = StyleSheet.create({
             marginBottom: 5,
             flexDirection: 'row',
            
-        }
+        },
+        interactiveButton: {
+            alignItems: 'center',
+        
+            padding: 10,
+            width: 90,
+            height: 40,
+            backgroundColor: '#3b82f6',
+        },
+        interactiveButtonText: {
+            fontSize: 16,
+            lineHeight: 21,
+            fontWeight: 'bold',
+            letterSpacing: 0.25,
+            color: 'white',     
+        },
 
 
 });
