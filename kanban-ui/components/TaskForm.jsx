@@ -4,10 +4,19 @@ import PriorityButton from './PriorityButton';
 const TaskForm = () => {
     const [title, setTitle] = React.useState('');
     const [description, setDescription] = React.useState('');
-    const [date,setDate] = React.useState('');
+    
     const [priority,setPriority] = React.useState('');
     const [task,addTask] = React.useState([]);
+    const [backgroundColor, setBackgroundColor] = useState('#000080');
     
+    const toggleBackgroundColor = () => {
+        setBackgroundColor(backgroundColor === '#000080' ? 'black' : '000080');
+      };
+
+      const saveDate = () => {
+        setDate(`${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`);
+      }
+
     return(
         <View style= {styles.formContainer}>
        <View>
@@ -15,7 +24,7 @@ const TaskForm = () => {
         <TextInput
         
         style={styles.input}
-        onChangeText={setTitle}
+        onChangeText={() => setTitle(title)}
         value={title}
         returnKeyType='done'
       />
@@ -24,10 +33,10 @@ const TaskForm = () => {
        <Text style= {styles.formText}>Description</Text>
        <TextInput
         
-        numberOfLines={4}
+        
         returnKeyType='done'
         style={styles.input}
-        onChangeText={setDescription}
+        onChangeText={() =>setDescription}
         value={description}
         
       />
@@ -35,18 +44,20 @@ const TaskForm = () => {
        <View>
        <Text style= {styles.formText}>Current priority status: {priority}</Text>
        <View style= {styles.statusButtons}>
-       <PriorityButton title = "ToDo"/>
+       <PriorityButton title = "ToDo" 
+       />
        <PriorityButton title = "Progress"/>
        <PriorityButton title = "Done"/>
        </View>
        </View>
        <View style= {styles.statusButtons}>
-       <Pressable style={styles.button}>
+       <TouchableOpacity style={[styles.button, {backgroundColor}]}
+        >
         <Text style={styles.buttonText}>Cancel</Text>
-        </Pressable>
-        <Pressable style={styles.button}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button}>
         <Text style={styles.buttonText}>Submit</Text>
-        </Pressable>
+        </TouchableOpacity>
        </View>
        
     
