@@ -25,7 +25,7 @@ const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
       padding: 50,
       paddingLeft: 60,
       fontSize: 40,
-      fontFamily: 'Roboto',
+      fontFamily: 'roboto',
       fontWeight: 'bold',
       color: '#3b82f6'
    },

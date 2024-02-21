@@ -7,6 +7,7 @@ const TaskForm = () => {
     const [date,setDate] = React.useState('');
     const [priority,setPriority] = React.useState('');
     const [task,addTask] = React.useState([]);
+    
     return(
         <View style= {styles.formContainer}>
        <View>
@@ -22,12 +23,13 @@ const TaskForm = () => {
        <View>
        <Text style= {styles.formText}>Description</Text>
        <TextInput
-        multiline
+        
         numberOfLines={4}
         returnKeyType='done'
         style={styles.input}
         onChangeText={setDescription}
         value={description}
+        
       />
        </View>
        <View>
@@ -38,14 +40,15 @@ const TaskForm = () => {
        <PriorityButton title = "Done"/>
        </View>
        </View>
-       <View>
+       <View style= {styles.statusButtons}>
+       <Pressable style={styles.button}>
+        <Text style={styles.buttonText}>Cancel</Text>
+        </Pressable>
         <Pressable style={styles.button}>
         <Text style={styles.buttonText}>Submit</Text>
         </Pressable>
        </View>
-       <Pressable style= {styles.removeButton}>
-        <Text style= {styles.buttonText}>X</Text>
-    </Pressable>
+       
     
        </View>
     );
@@ -80,12 +83,12 @@ const styles = StyleSheet.create({
     },
 
         input: {
-          minHeight: 40,
-          maxWidth: 150,
+          maxHeight: 80,
+          width: 250,
           margin: 12,
           borderWidth: 1,
           padding: 2,
-          fontWeight: 'bold'
+          fontWeight: 'bold',
         },
         statusButtons: {
             marginTop: 5,
