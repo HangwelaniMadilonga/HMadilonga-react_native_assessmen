@@ -12,10 +12,12 @@ const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
       <Text style = {styles.mainTitle}> Kanban Board</Text>
       <ButtonStack/>
       <View style= {styles.columnContainer}>
-      {/* <TaskForm/> */}
-      
+      <ScrollView horizontal={true}>
+      <KanbanColums title = "ToDo"/>
+      <KanbanColums title = "In Progress"/>
+      <KanbanColums title = "Done"/>
+      </ScrollView>
       </View>
-      <AddButton />
       </View>
   
       
