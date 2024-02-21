@@ -1,38 +1,52 @@
-import {Text, StyleSheet,TouchableOpacity} from 'react-native';
+import {Text, StyleSheet,TouchableOpacity,Alert, Modal,View} from 'react-native';
+import React, { useState } from 'react';
+import TaskForm from './TaskForm';
 
 const AddButton = () => {
+    const [modalVisible, setModalVisible] = useState(false);
     return(
-
-    <TouchableOpacity style= {styles.addButton}>
+        <View>
+             <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+          setModalVisible(!modalVisible);
+        }}>
+        <TaskForm modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+      </Modal>
+    <TouchableOpacity style= {styles.addButton}
+    onPress={() => setModalVisible(true)}
+    >
         <Text style= {styles.buttonText}>Add</Text>
     </TouchableOpacity>
+    </View>
     )};
 
     const styles = StyleSheet.create({
-   
+        addButtonContainer: {
+          flex: 1,
+          justifyContent: 'flex-end',
+          alignItems: 'flex-end',
+          padding: 20, 
+        },
         addButton: {
-            backgroundColor: '#3434C1',
-                        
-            alignItems: 'center',
-            marginLeft: 300,
-            marginTop: 730,
-            height: 32,
-            zIndex: 1,
-            position: 'absolute',
-           
-            minWidth: 80,
-            minHeight: 40,
-            
-          },
-          buttonText: {
+          backgroundColor: '#3434C1',
+          marginTop: 550,
+          marginLeft: 300,
+          alignItems: 'center',
+          justifyContent: 'center',
+          width: 80,
+          height: 40,
+          borderRadius: 20, 
+        },
+        buttonText: {
           fontSize: 16,
-          lineHeight: 21,
-          fontWeight: 'bold',
-          letterSpacing: 0.25,
           color: 'white',
-          padding: 10, 
-          
-          }})
+          fontWeight: 'bold',
+        },
+      });
 
 
  export default AddButton;

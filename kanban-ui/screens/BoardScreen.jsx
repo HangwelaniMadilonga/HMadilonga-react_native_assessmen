@@ -1,8 +1,10 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 import ButtonStack from '../components/ButtonStack';
+import React, { useState } from 'react';
+// import TaskForm from './TaskForm';
 import KanbanColums from '../components/KanbanColumn';
 import AddButton from '../components/AddButton';
-import TaskForm from '../components/TaskForm';
+
 
 const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
     return (
@@ -10,7 +12,7 @@ const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
       <Text style = {styles.mainTitle}> Kanban Board</Text>
       <ButtonStack/>
       <View style= {styles.columnContainer}>
-      <TaskForm/>
+      {/* <TaskForm/> */}
       
       </View>
       <AddButton />

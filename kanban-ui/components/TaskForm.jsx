@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 
-const TaskForm = () => {
+const TaskForm = ({modalVisible, setModalVisible}) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [priority, setPriority] = useState(''); 
@@ -16,6 +16,8 @@ const TaskForm = () => {
         setTitle('');
         setDescription('');
         setPriority('');
+
+        
     };
 
     return (
@@ -65,7 +67,7 @@ const TaskForm = () => {
                 </View>
             </View>
             <View style={styles.statusButtons}>
-                <TouchableOpacity style={[styles.button]} onPress={handleSubmit}>
+                <TouchableOpacity style={[styles.button]} onPress={() => {setModalVisible(!modalVisible);handleSubmit; }} >
                     <Text style={styles.buttonText}>Submit</Text>
                 </TouchableOpacity>
             </View>
