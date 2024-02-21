@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { useModalContext } from './ModalContext';
 
-const TaskForm = ({modalVisible, setModalVisible}) => {
+const TaskForm = () => {
     const [title, setTitle] = useState('New Task');
     const [description, setDescription] = useState('This is a new Task');
     const [priority, setPriority] = useState('ToDo'); 
     const [tasks, addTask] = useState([]); 
+    const [modalVisible,setModalVisible] = useModalContext();
 
     // Function to handle the submission of a task
     const handleSubmit = () => {
@@ -68,7 +70,7 @@ const TaskForm = ({modalVisible, setModalVisible}) => {
                 </View>
             </View>
             <View style={styles.statusButtons}>
-                <TouchableOpacity style={[styles.button]} onPress={() => {setModalVisible(!modalVisible);handleSubmit; }} >
+                <TouchableOpacity style={[styles.button]} onPress={() => {setModalVisible(!modalVisible);handleSubmit(); }} >
                     <Text style={styles.buttonText}>Submit</Text>
                 </TouchableOpacity>
             </View>

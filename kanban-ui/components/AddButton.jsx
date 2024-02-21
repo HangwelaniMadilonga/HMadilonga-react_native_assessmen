@@ -1,9 +1,11 @@
 import {Text, StyleSheet,TouchableOpacity,Alert, Modal,View} from 'react-native';
 import React, { useState } from 'react';
+import { useModalContext } from './ModalContext';
 import TaskForm from './TaskForm';
 
 const AddButton = () => {
-    const [modalVisible, setModalVisible] = useState(false);
+    const [modalVisible, setModalVisible] = useModalContext();
+
     return(
         <View>
              <Modal
@@ -14,7 +16,7 @@ const AddButton = () => {
           Alert.alert('Modal has been closed.');
           setModalVisible(!modalVisible);
         }}>
-        <TaskForm modalVisible={modalVisible} setModalVisible={setModalVisible}/>
+        <TaskForm />
       </Modal>
     <TouchableOpacity style= {styles.addButton}
     onPress={() => setModalVisible(true)}
