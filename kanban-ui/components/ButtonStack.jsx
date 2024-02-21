@@ -9,12 +9,12 @@ ButtonStack = () => {
   return (
     <View style={styles.mainContainer}>
         <Text style={styles.nomarlText}>
-            Show Prioirity:
+            Show :
         </Text>
     <View style={styles.buttonContainer}>
-    <PriorityButton title = "Low"/>
-    <PriorityButton title = "Medium"/>
-    <PriorityButton title = "High"/>
+    
+    <PriorityButton title = "Assigned"/>
+    <PriorityButton title = "All"/>
     </View>
     </View>
   );
@@ -30,10 +30,11 @@ const styles = StyleSheet.create({
   mainContainer: {
     
     flexDirection: 'row',
+    marginLeft: 60,
     // justifyContent: 'space-between',
   },
   nomarlText: {
-    fontSize: 14,
+    fontSize: 20,
     marginTop: 10,
     marginLeft: 7,
     fontWeight: 'bold',
