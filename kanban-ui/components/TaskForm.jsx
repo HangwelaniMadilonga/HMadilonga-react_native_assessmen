@@ -24,7 +24,7 @@ const TaskForm = () => {
         <TextInput
         
         style={styles.input}
-        onChangeText={() => setTitle(title)}
+        onChangeText={setTitle}
         value={title}
         returnKeyType='done'
       />
@@ -36,7 +36,7 @@ const TaskForm = () => {
         
         returnKeyType='done'
         style={styles.input}
-        onChangeText={() =>setDescription}
+        onChangeText={setDescription}
         value={description}
         
       />
