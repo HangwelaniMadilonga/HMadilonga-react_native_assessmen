@@ -17,10 +17,12 @@ export const TaskProvider = ({ children }) => {
   //New setTask without the task identified by the taskID
   const removeTask = (taskId) => {
     setTasks((currentTasks) => currentTasks.filter(task => task.id !== taskId));
+    
   };
 
   const editTask = (task) => {
     setSelectedTask(task);
+    
   };
 
   const updateTask = (taskId, updatedFields) => {

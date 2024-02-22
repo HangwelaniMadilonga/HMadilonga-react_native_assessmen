@@ -26,14 +26,18 @@ const TaskForm = () => {
 
     // Function to handle the submission of a task
     const handleSubmit = () => {
+        if (selectedTask) {
+            updateTask(selectedTask.id, { title, description, priority });
+        } else {
+           
         const newTask = {  id: uuid.v4(),title, description, priority,owner : 'none' };
-        addTask(newTask);
+        addTask(newTask);}
         
-       
         setTitle('');
         setDescription('');
         setSelectedTask(null);
         setModalVisible(false);
+        
         
     };
 

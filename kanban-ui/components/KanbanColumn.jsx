@@ -2,13 +2,23 @@ import {View, Text, TextInput, StyleSheet} from 'react-native';
 import TaskCard from './TaskCard';
 import { useTasks } from '../contexts/TaskContext';
 import { useModalContext } from '../contexts/ModalContext';
+import TaskCardModal from './Modal';
 
 const KanbanColums = (props) => {
   [tasks, addTask, removeTask,editTask, selectedTask, setSelectedTask,updateTask] = useTasks();
-  const [modalVisible,setModalVisible] = useModalContext();
+  
   const handleEditTask = (task) => {
-    editTask(task); 
-    setModalVisible(true); 
+    setSelectedTask(task);
+
+  };
+
+  const handleCloseModal = () => {
+    setSelectedTask(null); 
+  };
+
+  const handleSave = (updatedTask) => {
+    updateTask(updatedTask); 
+    setSelectedTask(null); 
   };
 
   //Filter tasks from array so that relevant tasks are shown
@@ -24,7 +34,14 @@ const KanbanColums = (props) => {
             
              
         </View>
-        
+        {selectedTask && (
+        <TaskCardModal
+          task={selectedTask}
+          isVisible={!!selectedTask}
+          onClose={handleCloseModal}
+          onSave={handleSave}
+        />
+      )}
       </View>
     );
   };
@@ -36,7 +53,7 @@ const KanbanColums = (props) => {
     flexDirection: 'column',
     gap: 0,
     marginRight: 16,
-    marginBottom: 12,
+    marginBottom: 60,
   },
   normalText: {
     fontSize: 14,

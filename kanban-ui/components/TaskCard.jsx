@@ -4,7 +4,7 @@ import DeleteButton from './DeleteButton';
 const TaskCard = (props) => {
   
   return (
-    <TouchableOpacity onPress={() => props.onEdit}>
+    <TouchableOpacity onPress={() => { console.log('Edit pressed'); props.onEdit();}}>
       <View style={styles.cardContainer}>
           <View style={styles.cardInfo}>
               <Text style={styles.titleText}>{props.title}</Text>

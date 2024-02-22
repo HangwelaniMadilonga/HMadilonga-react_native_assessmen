@@ -43,7 +43,7 @@ const AddButton = () => {
           height: 40,
           borderRadius: 20, 
           position: 'absolute',
-          top: 820,
+          top: 680,
         //   right: 20,
           zIndex: 1,
         },
