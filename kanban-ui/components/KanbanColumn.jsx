@@ -1,9 +1,15 @@
 import {View, Text, TextInput, StyleSheet} from 'react-native';
 import TaskCard from './TaskCard';
 import { useTasks } from '../contexts/TaskContext';
+import { useModalContext } from '../contexts/ModalContext';
 
 const KanbanColums = (props) => {
-  [tasks, addTask, removeTask] = useTasks();
+  [tasks, addTask, removeTask,editTask, selectedTask, setSelectedTask,updateTask] = useTasks();
+  const [modalVisible,setModalVisible] = useModalContext();
+  const handleEditTask = (task) => {
+    editTask(task); 
+    setModalVisible(true); 
+  };
 
   //Filter tasks from array so that relevant tasks are shown
   const filteredTasks = tasks.filter(task => task.priority === props.title);
@@ -14,7 +20,7 @@ const KanbanColums = (props) => {
         </View>
         <View style= {styles.columnBody}>
         {filteredTasks.map((task) => (
-          <TaskCard key={task.id} title={task.title} onRemove ={() => removeTask(task.id)}/>))}
+          <TaskCard key={task.id} id={task.id} title={task.title} onRemove ={() => removeTask(task.id)} onEdit={() => handleEditTask(task)}/>))}
             
              
         </View>

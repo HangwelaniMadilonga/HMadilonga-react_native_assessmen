@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { SafeAreaView, View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { useModalContext } from '../contexts/ModalContext';
 import { useTasks } from '../contexts/TaskContext';
@@ -8,9 +8,21 @@ const TaskForm = () => {
     const [title, setTitle] = useState('New Task');
     const [description, setDescription] = useState('This is a new Task');
     const [priority, setPriority] = useState('ToDo'); 
-    const [tasks, addTask] =  useTasks(); 
+    const [tasks, addTask, removeTask,editTask, selectedTask, setSelectedTask,updateTask] = useTasks();
     const [modalVisible,setModalVisible] = useModalContext();
-   
+    
+    useEffect(() => {
+        if (selectedTask) {
+          setTitle(selectedTask.title);
+          setDescription(selectedTask.description);
+          setPriority(selectedTask.priority);
+        } else {
+          // Reset to default values if no task is selected (add mode)
+          setTitle('New Task');
+          setDescription('This is a new Task');
+          setPriority('ToDo');
+        }
+      }, [selectedTask]);
 
     // Function to handle the submission of a task
     const handleSubmit = () => {
@@ -20,8 +32,8 @@ const TaskForm = () => {
        
         setTitle('');
         setDescription('');
-        setPriority('');
-
+        setSelectedTask(null);
+        setModalVisible(false);
         
     };
 

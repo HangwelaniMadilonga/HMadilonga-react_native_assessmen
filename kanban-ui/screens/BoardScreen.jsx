@@ -3,15 +3,15 @@ import ButtonStack from '../components/ButtonStack';
 import React, { useState } from 'react';
 // import TaskForm from './TaskForm';
 import KanbanColums from '../components/KanbanColumn';
-import { useModalContext } from '../contexts/ModalContext';
+import { ModalProvider } from '../contexts/ModalContext';
 import { TaskProvider } from '../contexts/TaskContext';
 
 const BoardScreen = ({}) => {
     return (
-      
+      <ModalProvider>
       <View style = {styles.screenContainer}>
       <Text style = {styles.mainTitle}> Kanban Board</Text>
-      <ButtonStack/>
+      {/* <ButtonStack/> */}
       <View style= {styles.columnContainer}>
       <ScrollView horizontal={true}>
       <KanbanColums title = "ToDo"/>
@@ -20,7 +20,7 @@ const BoardScreen = ({}) => {
       </ScrollView>
       </View>
       </View>
-      
+      </ModalProvider>
       
     );
   };
