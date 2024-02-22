@@ -3,6 +3,7 @@ import { StyleSheet, Text, SafeAreaView, View, ScrollView } from "react-native";
 import BoardScreen from "./screens/BoardScreen";
 import AddButton from "./components/AddButton";
 import { ModalProvider, useModalContext } from "./contexts/ModalContext";
+import { TaskProvider } from "./contexts/TaskContext";
 
 const Content = () => {
   //Global state from ModalContextt
@@ -21,12 +22,14 @@ const Content = () => {
 
 export default function App() {
   return (
-    <ModalProvider>
-      <View style={styles.container}>
-        <AddButton />
-        <Content />
-      </View>
-    </ModalProvider>
+    <TaskProvider>
+      <ModalProvider>
+        <View style={styles.container}>
+          <AddButton />
+          <Content />
+        </View>
+      </ModalProvider>
+    </TaskProvider>
   );
 }
 

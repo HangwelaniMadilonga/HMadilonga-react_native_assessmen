@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { useModalContext } from '../contexts/ModalContext';
+import { useTasks } from '../contexts/TaskContext';
 
 const TaskForm = () => {
     const [title, setTitle] = useState('New Task');
     const [description, setDescription] = useState('This is a new Task');
     const [priority, setPriority] = useState('ToDo'); 
-    const [tasks, addTask] = useState([]); 
+    const [tasks, addTask] =  useTasks(); 
     const [modalVisible,setModalVisible] = useModalContext();
+   
 
     // Function to handle the submission of a task
     const handleSubmit = () => {
         const newTask = { title, description, priority,owner : 'none' };
-        addTask([...tasks, newTask]);
+        addTask(newTask);
         
        
         setTitle('');
