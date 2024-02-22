@@ -1,10 +1,10 @@
 import {View, Text, TextInput, StyleSheet,TouchableOpacity} from 'react-native';
 import DeleteButton from './DeleteButton';
-const TaskCard = () => {
+const TaskCard = (props) => {
   return (
       <View style={styles.cardContainer}>
           <View style={styles.cardInfo}>
-              <Text style={styles.titleText}>Hello</Text>
+              <Text style={styles.titleText}>{props.title}</Text>
           </View>
           <DeleteButton style={styles.removeButton} />
       </View>

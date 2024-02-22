@@ -8,7 +8,7 @@ const KanbanColums = (props) => {
             <Text style={styles.normalText}>{props.title}</Text>
         </View>
         <View style= {styles.columnBody}>
-            <TaskCard />
+            <TaskCard title = ""/>
             
            
             
