@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
-import { AuthContext } from '../contexts/AuthContext'; 
+import { AuthContext } from '../contexts/AuthoContext'; 
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
