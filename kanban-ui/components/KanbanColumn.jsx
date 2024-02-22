@@ -3,7 +3,7 @@ import TaskCard from './TaskCard';
 import { useTasks } from '../contexts/TaskContext';
 
 const KanbanColums = (props) => {
-  const [ tasks ] = useTasks();
+  [tasks, addTask] = useTasks();
 
   //Filter tasks from array so that relevant tasks are shown
   const filteredTasks = tasks.filter(task => task.priority === props.title);
