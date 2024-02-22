@@ -6,9 +6,9 @@ import KanbanColums from '../components/KanbanColumn';
 import { useModalContext } from '../contexts/ModalContext';
 import { TaskProvider } from '../contexts/TaskContext';
 
-const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
+const BoardScreen = ({}) => {
     return (
-      <TaskProvider>
+      
       <View style = {styles.screenContainer}>
       <Text style = {styles.mainTitle}> Kanban Board</Text>
       <ButtonStack/>
@@ -20,7 +20,7 @@ const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
       </ScrollView>
       </View>
       </View>
-      </TaskProvider>
+      
       
     );
   };
