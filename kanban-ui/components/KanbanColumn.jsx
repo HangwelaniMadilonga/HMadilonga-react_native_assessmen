@@ -1,23 +1,22 @@
 import {View, Text, TextInput, StyleSheet} from 'react-native';
 import TaskCard from './TaskCard';
+import { useTasks } from '../contexts/TaskContext';
 
 const KanbanColums = (props) => {
+  const [ tasks ] = useTasks();
+
+  //Filter tasks from array so that relevant tasks are shown
+  const filteredTasks = tasks.filter(task => task.priority === props.title);
     return (
       <View style={styles.mainContainer}>
         <View style={styles.columnHeader}>
             <Text style={styles.normalText}>{props.title}</Text>
         </View>
         <View style= {styles.columnBody}>
-            <TaskCard title = ""/>
+        {filteredTasks.map((task) => (
+          <TaskCard key={task.id} title={task.title} />))}
             
-           
-            
-           
-            
-            
-            
-            
-                 
+             
         </View>
         
       </View>
