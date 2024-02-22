@@ -9,7 +9,7 @@ export const TaskProvider = ({ children }) => {
 
   const addTask = (newTask) => {
     setTasks((currentTasks) => [...currentTasks, newTask]);
-    console.log('Tasks updated:', tasks);
+   
   };
 
   return (

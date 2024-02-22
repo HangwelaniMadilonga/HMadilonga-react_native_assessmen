@@ -58,8 +58,8 @@ const TaskForm = () => {
                     </TouchableOpacity>
                     <TouchableOpacity
                     //When priority is "Progress" the button shall have a background of Black.
-                        style={[styles.interactiveButton, { backgroundColor: priority === 'Progress' ? 'black' : '#3b82f6' }]}
-                        onPress={() => setPriority("Progress")}
+                        style={[styles.interactiveButton, { backgroundColor: priority === 'In Progress' ? 'black' : '#3b82f6' }]}
+                        onPress={() => setPriority("In Progress")}
                     >
                         <Text style={styles.interactiveButtonText}>Progress</Text>
                     </TouchableOpacity>
