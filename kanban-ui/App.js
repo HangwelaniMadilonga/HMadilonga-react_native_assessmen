@@ -4,6 +4,7 @@ import BoardScreen from "./screens/BoardScreen";
 import AddButton from "./components/AddButton";
 import { ModalProvider, useModalContext } from "./contexts/ModalContext";
 import { TaskProvider } from "./contexts/TaskContext";
+import { AuthProvider } from "./contexts/AuthContext";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "./firebaseConfig"; // Adjust the import path as necessary
 
@@ -24,16 +25,18 @@ const Content = () => {
 
 export default function App() {
   return (
-    <SafeAreaView>
-      <TaskProvider>
-        <ModalProvider>
-          <View style={styles.container}>
-            <AddButton />
-            <Content />
-          </View>
-        </ModalProvider>
-      </TaskProvider>
-    </SafeAreaView>
+    <AuthProvider>
+      <SafeAreaView>
+        <TaskProvider>
+          <ModalProvider>
+            <View style={styles.container}>
+              <AddButton />
+              <Content />
+            </View>
+          </ModalProvider>
+        </TaskProvider>
+      </SafeAreaView>
+    </AuthProvider>
   );
 }
 
