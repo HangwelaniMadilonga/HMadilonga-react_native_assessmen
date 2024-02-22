@@ -24,33 +24,29 @@ const Content = () => {
   }
 };
 
-const App = () => {
-  const { user } = useContext(AuthContext);
-
-  useEffect(() => {
-    console.log("User state changed:", user);
-  }, [user]);
+export default function App() {
+  const { user } = useContext(AuthContext) || {};
 
   return (
     <AuthProvider>
       <SafeAreaView style={styles.container}>
         <TaskProvider>
           <ModalProvider>
-            {/* Always show the LoginScreen initially and transition based on user state */}
-            {!user ? (
-              <LoginScreen />
-            ) : (
+            {/* Conditionally render AddButton and content based on user sign-in status */}
+            {user ? (
               <>
                 <AddButton />
                 <Content />
               </>
+            ) : (
+              <LoginScreen />
             )}
           </ModalProvider>
         </TaskProvider>
       </SafeAreaView>
     </AuthProvider>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -59,5 +55,3 @@ const styles = StyleSheet.create({
     position: "relative",
   },
 });
-
-export default App;
