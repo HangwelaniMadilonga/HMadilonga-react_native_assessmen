@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, SafeAreaView, View, ScrollView } from "react-native";
 import BoardScreen from "./screens/BoardScreen";
 import AddButton from "./components/AddButton";
-import { ModalProvider, useModalContext } from "./components/ModalContext";
+import { ModalProvider, useModalContext } from "./contexts/ModalContext";
 
 const Content = () => {
   //Global state from ModalContextt

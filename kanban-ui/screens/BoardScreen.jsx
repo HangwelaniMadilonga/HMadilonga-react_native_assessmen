@@ -3,7 +3,7 @@ import ButtonStack from '../components/ButtonStack';
 import React, { useState } from 'react';
 // import TaskForm from './TaskForm';
 import KanbanColums from '../components/KanbanColumn';
-import { useModalContext } from '../components/ModalContext';
+import { useModalContext } from '../contexts/ModalContext';
 
 const BoardScreen = ({ title, desc, labels, onEdit, onDelete }) => {
     return (

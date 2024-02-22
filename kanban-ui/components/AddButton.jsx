@@ -1,6 +1,6 @@
 import {Text, StyleSheet,TouchableOpacity,Alert, Modal,View} from 'react-native';
 import React, { useState } from 'react';
-import { useModalContext } from './ModalContext';
+import { useModalContext } from '../contexts/ModalContext';
 import TaskForm from './TaskForm';
 
 const AddButton = () => {

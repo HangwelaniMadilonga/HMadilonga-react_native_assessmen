@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { SafeAreaView, View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
-import { useModalContext } from './ModalContext';
+import { useModalContext } from '../contexts/ModalContext';
 
 const TaskForm = () => {
     const [title, setTitle] = useState('New Task');
