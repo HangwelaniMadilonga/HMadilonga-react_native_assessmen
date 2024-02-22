@@ -8,7 +8,10 @@ const TaskCard = (props) => {
           <View style={styles.cardInfo}>
               <Text style={styles.titleText}>{props.title}</Text>
           </View>
-          <DeleteButton style={styles.removeButton} />
+          <TouchableOpacity onPress={props.onRemove} style={styles.removeButton}>
+          <Text style={styles.removeTaskText}>X</Text>
+          </TouchableOpacity>
+          
       </View>
   );
 };
@@ -40,6 +43,11 @@ const styles = StyleSheet.create({
   titleText: {
       fontWeight: 'bold',
       fontSize: 20,
+  },
+  removeTaskText: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    padding: 2,
   },
 });
 

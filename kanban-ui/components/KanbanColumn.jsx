@@ -3,7 +3,7 @@ import TaskCard from './TaskCard';
 import { useTasks } from '../contexts/TaskContext';
 
 const KanbanColums = (props) => {
-  [tasks, addTask] = useTasks();
+  [tasks, addTask, removeTask] = useTasks();
 
   //Filter tasks from array so that relevant tasks are shown
   const filteredTasks = tasks.filter(task => task.priority === props.title);
@@ -14,7 +14,7 @@ const KanbanColums = (props) => {
         </View>
         <View style= {styles.columnBody}>
         {filteredTasks.map((task) => (
-          <TaskCard key={task.id} title={task.title} />))}
+          <TaskCard key={task.id} title={task.title} onRemove ={() => removeTask(task.id)}/>))}
             
              
         </View>
