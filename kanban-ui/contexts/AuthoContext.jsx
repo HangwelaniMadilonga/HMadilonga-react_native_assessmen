@@ -1,10 +1,10 @@
 import React, { createContext, useState, useEffect } from 'react';
-import {
-  getAuth,
-  onAuthStateChanged,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-  signInAnonymously,
+import { 
+  getAuth, 
+  onAuthStateChanged, 
+  createUserWithEmailAndPassword, 
+  signInWithEmailAndPassword, 
+  signInAnonymously
 } from 'firebase/auth';
 
 export const AuthContext = createContext();
@@ -14,52 +14,52 @@ export const AuthProvider = ({ children }) => {
   const auth = getAuth();
 
   useEffect(() => {
-    // This listener updates the user state on auth state changes
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      // If currentUser is null, app access is not blocked; it's handled gracefully
-      setUser(currentUser);
-      console.log("Auth state changed:", currentUser);
+    
+    const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+      if (authUser) {
+        
+        setUser(authUser);
+      } else {
+        
+        setUser(null);
+      }
     });
-    return () => unsubscribe(); // Cleanup on component unmount
+    return unsubscribe; 
   }, []);
 
   const signUpAdmin = async (email, password) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      console.log("Admin signed up:", userCredential.user);
-      // Admin registration logic can be extended here
+      setUser(userCredential.user);
     } catch (error) {
-      console.error("Sign up error:", error);
+      console.error(error);
     }
   };
 
   const signIn = async (email, password) => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
-      console.log("User signed in:", userCredential.user);
-      // User sign-in logic can be extended here
+      setUser(userCredential.user);
     } catch (error) {
-      console.error("Sign in error:", error);
+      console.error(error);
     }
   };
 
   const signInAsGuest = async () => {
     try {
       const userCredential = await signInAnonymously(auth);
-      console.log("Guest signed in:", userCredential.user);
-      // Guest sign-in logic can be extended here
+      setUser(userCredential.user);
     } catch (error) {
-      console.error("Guest sign in error:", error);
+      console.error(error);
     }
   };
 
   const signOut = async () => {
     try {
       await auth.signOut();
-      console.log("User signed out");
-      // User sign-out logic can be extended here
+      setUser(null); 
     } catch (error) {
-      console.error("Sign out error:", error);
+      console.error(error);
     }
   };
 
