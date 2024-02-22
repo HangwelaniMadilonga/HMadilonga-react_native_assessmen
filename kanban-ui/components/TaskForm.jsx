@@ -11,7 +11,7 @@ const TaskForm = () => {
 
     // Function to handle the submission of a task
     const handleSubmit = () => {
-        const newTask = { title, description, priority };
+        const newTask = { title, description, priority,owner };
         addTask([...tasks, newTask]);
         
        

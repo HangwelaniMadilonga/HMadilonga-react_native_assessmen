@@ -1,12 +1,16 @@
 import {View, Text, TextInput, StyleSheet,TouchableOpacity} from 'react-native';
 import DeleteButton from './DeleteButton';
-const TaskCard = () => {
+const TaskCard = (title) => {
     return(
+    <View>
     <View 
     style={styles.cardInfo}>
         <DeleteButton/>
     </View>
-    
+    <View>
+     <Text> {title} </Text> 
+    </View>
+    </View>
     )
 };
 
@@ -17,8 +21,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         width: 280,
         minHeight: 100,
-        justifyContent: 'center',
-        alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
         borderRadius: 4,
         marginTop: 12,
         marginLeft: 12,
