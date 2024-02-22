@@ -4,11 +4,8 @@ import BoardScreen from "./screens/BoardScreen";
 import AddButton from "./components/AddButton";
 import { ModalProvider, useModalContext } from "./contexts/ModalContext";
 import { TaskProvider } from "./contexts/TaskContext";
-
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "./firebaseConfig"; // Adjust the import path as necessary
-
-const app = initializeApp(firebaseConfig);
 
 const Content = () => {
   //Global state from ModalContextt
