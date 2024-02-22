@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { SafeAreaView, View, Text, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { useModalContext } from '../contexts/ModalContext';
 import { useTasks } from '../contexts/TaskContext';
+import { v4 as uuidv4 } from 'uuid';
 
 const TaskForm = () => {
     const [title, setTitle] = useState('New Task');
@@ -13,7 +14,7 @@ const TaskForm = () => {
 
     // Function to handle the submission of a task
     const handleSubmit = () => {
-        const newTask = { title, description, priority,owner : 'none' };
+        const newTask = { id: uuidv4(),title, description, priority,owner : 'none' };
         addTask(newTask);
         
        
