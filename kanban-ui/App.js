@@ -8,7 +8,7 @@ import { TaskProvider } from "./contexts/TaskContext";
 import { AuthProvider, AuthContext } from "./contexts/AuthoContext";
 import LoginScreen from "./screens/LoginScreen";
 import { initializeApp } from "firebase/app";
-import firebaseConfig from "./firebaseConfig"; // Adjust the import path as necessary
+import firebaseConfig from "./firebaseConfig";
 
 const Content = () => {
   const { modalVisible } = useModalContext();
@@ -25,7 +25,7 @@ const Content = () => {
 };
 
 export default function App() {
-  const { user } = useContext(AuthContext) || {}; // Use AuthContext to determine if a user is signed in
+  const { user } = useContext(AuthContext) || {};
 
   return (
     <AuthProvider>
@@ -51,7 +51,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
-
+    flex: 1,
     position: "relative",
   },
 });
