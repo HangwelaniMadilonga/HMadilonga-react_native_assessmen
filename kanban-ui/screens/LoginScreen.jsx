@@ -1,32 +1,32 @@
-
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, TextInput, Button, StyleSheet } from 'react-native';
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../contexts/AuthContext'; 
 
-const LoginScreen = ({ onLogin }) => {
+const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const { signIn, signInAsGuest, signUpAdmin } = useContext(AuthContext); 
 
-  const handleLogin = async () => {
-    const auth = getAuth();
+ 
+  const handleSignIn = async () => {
     try {
-      await signInWithEmailAndPassword(auth, email, password);
-      onLogin(true); 
+      await signIn(email, password);
     } catch (error) {
       console.error(error);
     }
   };
 
   const handleSignUp = async () => {
-    
-    await signUpAdmin(email, password);
+    try {
+      await signUpAdmin(email, password);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const handleGuestLogin = async () => {
-    const auth = getAuth();
+  const handleGuestSignIn = async () => {
     try {
-      await signInAnonymously(auth);
-      onLogin(false); 
+      await signInAsGuest();
     } catch (error) {
       console.error(error);
     }
@@ -47,9 +47,9 @@ const LoginScreen = ({ onLogin }) => {
         secureTextEntry
         style={styles.input}
       />
-      <Button title="Login" onPress={handleLogin} />
-      <Button title="Login as Guest" onPress={handleGuestLogin} />
+      <Button title="Sign In" onPress={handleSignIn} />
       <Button title="Sign Up as Admin" onPress={handleSignUp} />
+      <Button title="Sign In as Guest" onPress={handleGuestSignIn} />
     </View>
   );
 };
