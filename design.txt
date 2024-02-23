@@ -1,4 +1,29 @@
-// This is a text file that goes into depth about the UI structure,todos,alternative implementations on the kanban-ui app.
+This is a text file that goes into depth about the UI structure,todos,alternative implementations on the kanban-ui app.
 
-The kanban board will  have a feature that can have the user shoow which tasks they want to see based on the priority status of the task.
+I made use of expo with react native for this project. The only big constraint I had was the lack of an ios emulator or device to see how well structured the layout is for IOS.
+
+The kanban app is suppossed to have a user login  and authentification. I did not manage to complete the authentification due to time. The UI for the loginscreen is there 
+and there is some logic for signing in. This is put in a global state. Even so the authentification was not implemented. The plan was to make use of firebase to store both ticket data
+and user information in order to differentiate betweeen a normal user and an admin.
+
+When the user enters the app they see three columns that are in a swipeable horizontal layout and an add task button that is persistently at the same position and unaffected by the layout changes.
+Should the user press the add task button they will be shown a modal in which they can input the details of the ticket. The ticket is then put in an object and the object into an array. The state 
+of the ticket is stored in a global state.
+
+The abstraction of the app would definitely have been better if given more time. Components could be  made to be more reusable and structured for the app to be more efficient.
+
+When the user already has a task the app will show the task under one of the kanban columns. If the user should tap on the task card they will recieve another modal with an edit page.
+This will allow the user to change information about the tickets and also to assign in to a different column if need be. The changing of coumns for a ticket is done through button taps. According to their
+preference the user can tap either "ToDo,In Progress or Done button" in order to change the column for a ticket. Initially the plan was to make the UI allow drag and drop however that required use of 
+3rd party libraries and that was discouraged.
+
+The design iteslf was built from scratch. Since this is an app for a just admin purposes the designs and UI are simple and intuitive. It was made more with efficiency and simplicity in mind. 
+The cards that hold the title of the ticket have an 'X' button that when pressed will delte that specific task. This means that over all the user can create,edit and delete a ticket.
+
+Only third party use cases are for firebase and react navigation but both were not used in the end as time constraints stopped me from completing the authentification.
+
+The only screens that are on the app are the board screen and the login screen which is not shown on the UI. The design  for the login screen was not final. The screens were not even 
+neccessary at the end since this app can just be made into a single page application without being too complex.
+
+Apart from authentification if given more time the app would have more features for accessibility and a dark mode for user preference and a way more advanced ticket information system.
 
