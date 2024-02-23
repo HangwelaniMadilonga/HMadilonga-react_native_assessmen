@@ -20,11 +20,15 @@ export const TaskProvider = ({ children }) => {
     
   };
 
+ // FOr the editing of an existing task
+
   const editTask = (task) => {
     setSelectedTask(task);
     
   };
 
+
+  //Handle the updating of tasks already existing
   const updateTask = (taskId, updatedFields) => {
     setTasks(currentTasks =>
       currentTasks.map(task =>

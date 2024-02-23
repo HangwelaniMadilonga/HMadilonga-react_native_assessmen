@@ -8,6 +8,7 @@ const AddButton = () => {
 
     return(
         <View>
+          {/* //Modal for when add button is pressed. It shows  a form */}
              <Modal
         animationType="slide"
         transparent={true}

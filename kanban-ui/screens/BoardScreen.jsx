@@ -11,7 +11,7 @@ const BoardScreen = ({}) => {
       <ModalProvider>
       <View style = {styles.screenContainer}>
       <Text style = {styles.mainTitle}> Kanban Board</Text>
-      {/* <ButtonStack/> */}
+     
       <View style= {styles.columnContainer}>
       <ScrollView horizontal={true}>
       <KanbanColums title = "ToDo"/>
